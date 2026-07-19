@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/start_screen.dart';
+import 'features/start/presentation/screens/start_screen.dart';
 
 class HifzRehberiApp extends StatelessWidget {
   const HifzRehberiApp({super.key});

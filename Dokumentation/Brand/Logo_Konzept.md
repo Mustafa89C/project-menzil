@@ -1,19 +1,17 @@
-# Logo-Konzept: Symbolik und Bedeutung
+# Logo-Konzept: Symbolik von Project Menzil
 
-Das visuelle Erscheinungsbild von Project Menzil basiert auf vier zentralen Säulen:
+Das Logo von Project Menzil soll die Verbindung zwischen Tradition und Moderne sowie den Weg des Lernens visualisieren.
 
-## 1. Menzil (Der Weg)
-*   **Symbolik**: Pfade, Linien oder Etappenpunkte.
-*   **Bedeutung**: Visualisierung des Fortschritts und der Strukturierung des Hifz-Weges.
+## Symbolische Elemente
 
-## 2. Mushaf (Die Offenbarung)
-*   **Symbolik**: Stilisierte Seiten oder die Form eines aufgeschlagenen Buches.
-*   **Bedeutung**: Der Quran als Zentrum und Ursprung des Projekts.
+### Menzil (Der Weg)
+Die Visualisierung von Etappen oder einem Pfad, der zum Ziel führt. Es verdeutlicht, dass Hifz ein Prozess ist, der Schritt für Schritt begangen wird.
 
-## 3. Herz (Die Bewahrung)
-*   **Symbolik**: Die organische Form eines Herzens oder ein zentraler Fokuspunkt.
-*   **Bedeutung**: Hifz bedeutet "Bewahren". Das Ziel ist es, den Quran im Herzen zu tragen, nicht nur im Gedächtnis.
+### Mushaf (Die Offenbarung)
+Die Form eines aufgeschlagenen Buches oder stilisierte Schriftzeichen, die den Quran als zentralen Bezugspunkt darstellen.
 
-## 4. Licht (Die Rechtleitung)
-*   **Symbolik**: Strahlen, ein leuchtender Punkt (Nur) oder ein sanfter Verlauf.
-*   **Bedeutung**: Wissen ist Licht. Die App soll den Weg erhellen und Klarheit über den eigenen Fortschritt schaffen.
+### Herz (Das Bewahren)
+Eine organische Einbindung der Herzform, um zu zeigen, dass der Quran nicht nur im Kopf, sondern im Herzen (Hifz) getragen wird.
+
+### Licht (Die Rechtleitung)
+Ein Strahlen oder ein Fokuspunkt, der die Erleuchtung durch das Wissen und die Rechtleitung symbolisiert.

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/navigation/main_navigation.dart';
+
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
 
@@ -38,7 +40,13 @@ class StartScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const MainNavigation(),
+                      ),
+                    );
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 16),
                     child: Text("Lernen starten"),

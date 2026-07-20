@@ -1,4 +1,6 @@
 # Sprint Check Tool for Project Menzil
+$OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 Write-Host "======================================" -ForegroundColor Magenta
 Write-Host "       KOMPLETTER SPRINT-CHECK        " -ForegroundColor Magenta

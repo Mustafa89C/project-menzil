@@ -1,4 +1,6 @@
 # Flutter Check Tool for Project Menzil
+$OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 Write-Host "--- Flutter Qualitäts-Check ---" -ForegroundColor Cyan
 

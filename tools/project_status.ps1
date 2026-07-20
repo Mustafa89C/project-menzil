@@ -1,4 +1,6 @@
 # Project Status Tool for Project Menzil
+$OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 Write-Host "--- Projekt-Status Zusammenfassung ---" -ForegroundColor Cyan
 

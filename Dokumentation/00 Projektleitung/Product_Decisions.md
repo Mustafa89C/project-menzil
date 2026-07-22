@@ -1,4 +1,4 @@
-# Project Menzil – Product Decisions
+# Project Hifz Rehberi – Product Decisions
 
 Dieses Dokument enthält verbindliche Produktentscheidungen.
 
@@ -97,3 +97,59 @@ Die Entwicklung folgt:
 Planen → Bauen → Testen → Verbessern
 
 Jede Änderung wird überprüft und nachvollziehbar dokumentiert.
+
+---
+
+## P-009 – Dashboard Foundation als MVP-Referenz
+
+Status: Beschlossen
+
+Die aktuelle Dashboard Foundation dient als freigegebene visuelle und funktionale Referenz für den Project Hifz Rehberi MVP. Sie ist die Grundlage für die weitere Entwicklung, stellt jedoch noch keine endgültige technische Umsetzung dar.
+
+---
+
+## P-010 – Lesemodus UI Reference v1.0
+
+Status: Beschlossen
+
+Die "Lesemodus UI Reference v1.0" ist die genehmigte Referenz für das Leseerlebnis in Project Hifz Rehberi.
+
+---
+
+## P-011 – Zwei verbindliche Designwelten
+
+Status: Beschlossen
+
+Project Hifz Rehberi nutzt zwei klar voneinander getrennte Designwelten: die **App-Welt** (UI/Navigation) und die **Muṣḥaf-Welt** (Quran-Text). Alle neuen Oberflächen orientieren sich verbindlich an einer dieser beiden Designwelten.
+
+---
+
+## P-012 – Visual-First-Prinzip
+
+Status: Beschlossen
+
+Neue Oberflächen werden zunächst als visuelle Referenz (Mockup/UI-Entwurf) erstellt und freigegeben. Erst danach erfolgt die technische Umsetzung in Flutter.
+
+---
+
+## P-013 – Dokumentationsprinzip
+
+Status: Beschlossen
+
+"So viel Dokumentation wie nötig – so viel Entwicklung wie möglich." Es wird eine gesunde Verhältnismäßigkeit zwischen Dokumentationsaufwand und sichtbarem Fortschritt gewahrt.
+
+---
+
+## P-014 – Rollenmodell-Definition
+
+Status: Beschlossen
+
+Das fachliche Rollenmodell (Schüler, Hoca, Eltern etc.) muss zwingend vor der technischen Umsetzung rollenbasierter Funktionen definiert sein.
+
+---
+
+## P-015 – Gastmodus ohne Anmeldung
+
+Status: Beschlossen
+
+Project Hifz Rehberi bietet einen Gastmodus, der den Zugriff auf den Muṣḥaf, Audio-Inhalte und Übersetzungen ohne Anmeldung ermöglicht. In diesem Modus findet kein Speichern von Lernfortschritten und keine Synchronisation statt.

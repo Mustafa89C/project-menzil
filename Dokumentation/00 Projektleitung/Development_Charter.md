@@ -1,111 +1,71 @@
-# Project Menzil – Development Charter
+# Project Hifz Rehberi – Development Charter
 
-## 1. Single Source of Truth
+## 1. Fundament und Single Source of Truth
 
-Die Product Bible ist die einzige fachliche und strategische Quelle des Projekts.
+Die Product Bible ist die einzige höchste fachliche und strategische Instanz des Projekts.
 
-Bei Widersprüchen zwischen Dokumenten gilt immer die Product Bible.
-Alle anderen Dokumente werden daraus abgeleitet.
+Die Product Foundation v1.0 bündelt die verbindlichen Grundlagendokumente. Bei jedem fachlichen Widerspruch gilt ausnahmslos die Product Bible. Alle Fachkonzepte, Architektur- und Designdokumente werden daraus abgeleitet.
 
 ## 2. Verantwortlichkeiten
 
 CEO / Product Owner entscheidet über:
+- Vision & Produktphilosophie
+- Hifz-System & Lehrmethodik
+- UX & Designphilosophie
+- Navigation & Rollenmodelle
+- Datenschutz & Geschäftsmodell
+- Roadmap & Produktstrategie
 
-- Vision
-- Produktphilosophie
-- Hifz-System
-- UX
-- Navigation
-- Designphilosophie
-- Datenschutz
-- Roadmap
-- Produktstrategie
-- Geschäftsmodell
-
-Entwickler und KI unterstützen die Umsetzung.
+Entwickler und KI unterstützen die Umsetzung dieser Vorgaben.
 
 ## 3. Rollenverständnis
 
-Der CEO entwickelt das Produkt.
-
-Die KI entwickelt die Umsetzung.
-
+Der CEO entwickelt das Produkt (das "Was" und "Warum").
+Die KI entwickelt die Umsetzung (das "Wie").
 Nicht umgekehrt.
 
 ## 4. KI-Regeln
 
 KI darf:
-
-- strukturieren
-- dokumentieren
-- analysieren
-- Architektur unterstützen
-- implementieren
-- testen
-- Fehler beheben
-- Codequalität verbessern
+- Strukturieren, dokumentieren und analysieren.
+- Architektur unterstützen und Implementierungen durchführen.
+- Testen, Fehler beheben und Codequalität verbessern.
 
 KI darf nicht eigenständig:
-
-- Produktentscheidungen ändern
-- Lehrmethoden verändern
-- UX neu definieren
-- Navigation ändern
-- Rollenmodelle verändern
-- Produktphilosophie überschreiben
+- Produktentscheidungen oder Philosophie ändern.
+- Lehrmethoden oder Rollenmodelle verändern.
+- UX-Konzepte oder Navigationsstrukturen neu definieren.
 
 ## 5. Product Freeze
 
-Produktdokumente dürfen nur nach ausdrücklicher Freigabe des CEO geändert werden.
-
-KI darf:
-- Vorschläge machen
-- Fragen stellen
-- Widersprüche aufzeigen
-
-Aber keine fachlichen Änderungen selbstständig durchführen.
+Produktdokumente dürfen nur nach ausdrücklicher Freigabe des CEO geändert werden. 
+Die KI darf Vorschläge machen, Fragen stellen und Widersprüche aufzeigen, aber keine fachlichen Änderungen selbstständig durchführen.
 
 ## 6. Produktphilosophie
 
-Tradition First – Technology Second.
+**Tradition First – Technology Second.**
+Die Technik unterstützt den Qur'an, den Hoca und die Hifz-Tradition. Sie ersetzt sie nicht.
 
-Die Technik unterstützt:
+## 7. Entwicklungsprinzipien
 
-- den Qur'an
-- den Hoca
-- die Hifz-Tradition
+- **Visual-First**: Neue Oberflächen werden zunächst als visuelle Referenz (Mockup/UI-Entwurf) erstellt und freigegeben. Erst danach erfolgt die technische Umsetzung in Flutter.
+- **Git-Sicherheitsregel**: Vor größeren KI-gestützten Änderungen muss ein sauberer Git-Status vorliegen. Falls erforderlich, wird der aktuelle Stand zunächst committet oder anderweitig gesichert.
+- **Smartphone-Test**: Nach größeren UI-Sprints erfolgt zwingend ein Test auf einem echten Smartphone, um Darstellung, Bedienbarkeit und Nutzererlebnis zu überprüfen.
+- **Prozessfolge**: Problem verstehen → Product-Bible-Abgleich → Konzept → Implementierung → Test → Review.
 
-Sie ersetzt sie nicht.
+## 8. Iterativer Entwicklungsprozess
 
-## 7. Entwicklungsprinzip
+Arbeitsprinzip: **Planen → Bauen → Testen → Verbessern.**
+Jeder Sprint soll einen sichtbaren Mehrwert liefern. Wir arbeiten in kleinen, überprüfbaren Schritten.
 
-Jede Entwicklung folgt:
+## 9. Dokumentationsprinzip
 
-Problem verstehen
-↓
-Product-Bible-Abgleich
-↓
-Konzept
-↓
-Implementierung
-↓
-Test
-↓
-Review
+**"So viel Dokumentation wie nötig – so viel Entwicklung wie möglich."**
+Es muss eine gesunde Verhältnismäßigkeit zwischen Dokumentationsaufwand und sichtbarer Entwicklung gewahrt bleiben. Dokumentation dient der Klarheit und Nachhaltigkeit, darf aber den Fortschritt nicht lähmen.
 
-## 8. Iterative Entwicklung
+## 10. Qualitätsprinzipien
 
-Arbeitsprinzip:
-
-Planen → Bauen → Testen → Verbessern
-
-Jeder Sprint soll einen sichtbaren Mehrwert liefern.
-
-## 9. Qualitätsprinzipien
-
-- Qualität vor Geschwindigkeit
-- Offline First
-- Datenschutz First
-- Keine Werbung
-- Saubere Dokumentation
-- Kleine überprüfbare Änderungen
+- Qualität vor Geschwindigkeit.
+- Offline First & Datenschutz First.
+- Keine Werbung & ablenkungsfreie Umgebung.
+- Saubere Dokumentation & modularer Code.

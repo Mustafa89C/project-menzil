@@ -1,6 +1,19 @@
 ﻿# Mission
 
-Status: Draft
+Version: 1.0  
+Status: Approved
 
-Connect traditional Qur'an memorization methods with structured,
-respectful and helpful digital support.
+Hifz Rehberi supports students, teachers, parents and institutions through
+a calm, structured and trustworthy digital learning environment.
+
+The application helps users:
+
+- organize memorization,
+- plan repetition,
+- document progress,
+- prepare lesson submissions,
+- identify weak pages,
+- practice listening and recitation,
+- remain connected to the traditional Hifz method.
+
+Technology supports the teacher and student. It does not replace them.

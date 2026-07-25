@@ -1,7 +1,11 @@
 ﻿# Vision
 
-Status: Draft
+Version: 1.0  
+Status: Approved
 
-Hifz Rehberi is the digital companion for the traditional Hifz journey.
-Technology supports the memorization process without replacing its
-religious, pedagogical or human foundations.
+Hifz Rehberi aims to become the leading digital companion for traditional,
+structured and teacher-guided Qur'an memorization.
+
+The product connects proven Hifz traditions with carefully designed digital
+support while preserving the dignity, discipline and human guidance of the
+memorization journey.

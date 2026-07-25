@@ -1,64 +1,19 @@
-\# Hifz Rehberi
+﻿# Project Hifz Rehberi
 
+Digital companion for structured and traditional Qur'an memorization.
 
+## Project documentation
 
-> Digitaler Begleiter für den Hifz des Qur'an nach der traditionellen türkischen Hifz-Methode.
+Read the project documentation in this order:
 
+1. `docs/00_foundation/PROJECT_CONSTITUTION.md`
+2. `docs/00_foundation/product_foundation.md`
+3. `docs/01_design/brand_book.md`
+4. `docs/03_ai/AGENTS.md`
+5. `docs/04_development/workflow.md`
+6. Current sprint brief in `docs/05_sprints/`
 
+## Project status
 
-\## Projektstatus
-
-
-
-🟢 Entwicklung
-
-
-
-Aktuelle Version:
-
-v0.2.0
-
-
-
-\## Vision
-
-
-
-Eine professionelle Hifz-App für Schüler, Hocas und Moscheen.
-
-
-
-\## Technologie
-
-
-
-\- Flutter
-
-\- Dart
-
-\- Android Studio
-
-
-
-\## Projektstruktur
-
-
-
-FlutterProjekt/
-
-Dokumentation/
-
-
-
-\## Roadmap
-
-
-
-\- v0.2.1 Methodenauswahl
-
-\- v0.2.2 Dashboard
-
-\- v0.3 Speicherung
-
-\- v1.0 Play Store
-
+Hifz Rehberi Development Kit: v1.0  
+Status: Initial repository implementation

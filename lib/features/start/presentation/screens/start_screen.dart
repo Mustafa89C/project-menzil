@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/navigation/main_navigation.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_spacing.dart';
+import '../../../../core/theme/app_typography.dart';
+import '../../../../shared/widgets/app_button.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -8,38 +11,36 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Hifz Rehberi"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.auto_stories,
-                size: 90,
-              ),
-              const SizedBox(height: 25),
-              const Text(
-                "Hifz Rehberi",
-                style: TextStyle(
-                  fontSize: 34,
-                  fontWeight: FontWeight.bold,
+      backgroundColor: AppColors.ivory,
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.m),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // TODO: Replace with official Project Hifz Rehberi logo asset
+                // Image.asset('assets/images/logo.png', height: 120),
+                const Icon(
+                  Icons.auto_stories,
+                  size: 90,
+                  color: AppColors.turquoise,
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Willkommen auf deinem Hifz-Weg",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
-              ),
-              const SizedBox(height: 40),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
+                const SizedBox(height: AppSpacing.m),
+                const Text(
+                  "Hifz Rehberi",
+                  style: AppTypography.h1,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                const Text(
+                  "Willkommen auf deinem Hifz-Weg",
+                  textAlign: TextAlign.center,
+                  style: AppTypography.body,
+                ),
+                const SizedBox(height: AppSpacing.xl),
+                AppButton(
+                  text: "Lernen starten",
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
@@ -47,13 +48,9 @@ class StartScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    child: Text("Lernen starten"),
-                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

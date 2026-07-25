@@ -1,84 +1,29 @@
 import 'package:flutter/material.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_spacing.dart';
+import '../../../../core/theme/app_typography.dart';
+import '../../../../shared/widgets/app_card.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryColor = Color(0xFF1F6B4F); // Dunkles Türkis
-    const Color backgroundColor = Color(0xFFFDFBF7); // Helle Cremefläche
-    const Color accentColor = Color(0xFFD4AF37); // Gold-Akzent
-
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: AppColors.ivory,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+            padding: const EdgeInsets.all(AppSpacing.m),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Vorläufiges Platzhalter-Logo
-                const Icon(
-                  Icons.auto_stories,
-                  size: 64,
-                  color: primaryColor,
-                ),
-                const SizedBox(height: 24),
-                
-                // Begrüßung Arabisch
-                const Text(
-                  'السلام عليكم ورحمة الله وبركاته',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: primaryColor,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                
-                // Begrüßung Deutsch
-                Text(
-                  'Willkommen',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black.withAlpha((0.7 * 255).round()),
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                const SizedBox(height: 48),
-
-                // Vier große Karten
-                _DashboardCard(
-                  icon: Icons.menu_book,
-                  title: 'Heute lernen',
-                  primaryColor: primaryColor,
-                  accentColor: accentColor,
-                ),
-                const SizedBox(height: 16),
-                _DashboardCard(
-                  icon: Icons.sync,
-                  title: 'Festigung',
-                  primaryColor: primaryColor,
-                  accentColor: accentColor,
-                ),
-                const SizedBox(height: 16),
-                _DashboardCard(
-                  icon: Icons.bar_chart,
-                  title: 'Fortschritt',
-                  primaryColor: primaryColor,
-                  accentColor: accentColor,
-                ),
-                const SizedBox(height: 16),
-                _DashboardCard(
-                  icon: Icons.track_changes,
-                  title: 'Nächster Schritt',
-                  primaryColor: primaryColor,
-                  accentColor: accentColor,
-                ),
-                
-                const SizedBox(height: 40), // Whitespace am Ende
+                _buildHeader(),
+                const SizedBox(height: AppSpacing.l),
+                _buildDailyImpulse(),
+                const SizedBox(height: AppSpacing.l),
+                _buildActionGrid(),
+                const SizedBox(height: AppSpacing.xl),
               ],
             ),
           ),
@@ -86,62 +31,136 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Flexible slots for greeting, user name and date
+            Text("Assalāmu ʿalaikum", style: AppTypography.label),
+            const Text("Benutzername", style: AppTypography.h1),
+            Text("25. Juli 2026", style: AppTypography.label),
+          ],
+        ),
+        // TODO: Replace with official Project Hifz Rehberi logo asset
+        const Icon(Icons.auto_stories, size: 48, color: AppColors.turquoise),
+      ],
+    );
+  }
+
+  Widget _buildDailyImpulse() {
+    return AppCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.lightbulb_outline,
+                color: AppColors.gold,
+                size: 20,
+              ),
+              const SizedBox(width: AppSpacing.xs),
+              Text(
+                "Tagesimpuls",
+                style: AppTypography.label.copyWith(color: AppColors.gold),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.s),
+          const Text(
+            "\"Der Beste unter euch ist derjenige, der den Qur'an lernt und ihn lehrt.\"",
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+              fontSize: 16,
+              color: Colors.black87,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          const Align(
+            alignment: Alignment.centerRight,
+            child: Text("— Hadith", style: AppTypography.label),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildActionGrid() {
+    return Column(
+      children: [
+        _ActionCard(
+          icon: Icons.menu_book,
+          title: "Heute lernen",
+          subtitle: "Setze deine Hifz-Reise fort",
+        ),
+        const SizedBox(height: AppSpacing.s),
+        _ActionCard(
+          icon: Icons.sync,
+          title: "Festigung",
+          subtitle: "Murājaʿa deiner Suren",
+        ),
+        const SizedBox(height: AppSpacing.s),
+        _ActionCard(
+          icon: Icons.bar_chart,
+          title: "Fortschritt",
+          subtitle: "Deine Meilensteine im Blick",
+        ),
+        const SizedBox(height: AppSpacing.s),
+        _ActionCard(
+          icon: Icons.track_changes,
+          title: "Nächster Schritt",
+          subtitle: "Was als Nächstes ansteht",
+        ),
+      ],
+    );
+  }
 }
 
-class _DashboardCard extends StatelessWidget {
+class _ActionCard extends StatelessWidget {
   final IconData icon;
   final String title;
-  final Color primaryColor;
-  final Color accentColor;
+  final String subtitle;
 
-  const _DashboardCard({
+  const _ActionCard({
     required this.icon,
     required this.title,
-    required this.primaryColor,
-    required this.accentColor,
+    required this.subtitle,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
-        side: BorderSide(color: Colors.black.withAlpha((0.05 * 255).round())),
+    return AppCard(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.m,
+        vertical: AppSpacing.s,
       ),
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: primaryColor.withAlpha((0.1 * 255).round()),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Icon(
-                icon,
-                color: accentColor,
-                size: 32,
-              ),
+      onTap: () {},
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(AppSpacing.s),
+            decoration: BoxDecoration(
+              color: AppColors.turquoise.withAlpha(25),
+              borderRadius: BorderRadius.circular(16),
             ),
-            const SizedBox(width: 24),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
+            child: Icon(icon, color: AppColors.turquoise, size: 28),
+          ),
+          const SizedBox(width: AppSpacing.m),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: AppTypography.h2),
+                Text(subtitle, style: AppTypography.label),
+              ],
             ),
-            const Spacer(),
-            const Icon(
-              Icons.chevron_right,
-              color: Colors.black26,
-            ),
-          ],
-        ),
+          ),
+          const Icon(Icons.chevron_right, color: AppColors.gold),
+        ],
       ),
     );
   }

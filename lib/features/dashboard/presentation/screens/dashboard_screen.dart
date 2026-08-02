@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_typography.dart';
 import '../../../../shared/widgets/app_card.dart';
+import '../../../hifz/application/hifz_providers.dart';
+import '../../../hifz/domain/entities/hifz_progress.dart';
+import '../../../hifz/domain/hifz_plan.dart';
+import '../../../hifz/presentation/screens/todays_learning_screen.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final progress = ref.watch(hifzProgressProvider).value;
+
     return Scaffold(
       backgroundColor: AppColors.ivory,
       body: SafeArea(
@@ -22,7 +30,7 @@ class DashboardScreen extends StatelessWidget {
                 const SizedBox(height: AppSpacing.l),
                 _buildDailyImpulse(),
                 const SizedBox(height: AppSpacing.l),
-                _buildActionGrid(),
+                _buildActionGrid(context, progress),
                 const SizedBox(height: AppSpacing.xl),
               ],
             ),
@@ -89,13 +97,27 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildActionGrid() {
+  Widget _buildActionGrid(BuildContext context, HifzProgress? progress) {
+    final completed = progress?.completedPages ?? 0;
+    final isDone = progress?.isPlanComplete ?? false;
+    final learnSubtitle = isDone
+        ? "Juz ${HifzPlan.juzNumber} abgeschlossen"
+        : "Seite ${completed + 1} von ${HifzPlan.totalPages} · Juz ${HifzPlan.juzNumber}";
+
     return Column(
       children: [
         _ActionCard(
           icon: Icons.menu_book,
           title: "Heute lernen",
-          subtitle: "Setze deine Hifz-Reise fort",
+          subtitle: learnSubtitle,
+          progress: completed / HifzPlan.totalPages,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const TodaysLearningScreen(),
+              ),
+            );
+          },
         ),
         const SizedBox(height: AppSpacing.s),
         _ActionCard(
@@ -124,11 +146,15 @@ class _ActionCard extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final double? progress;
+  final VoidCallback? onTap;
 
   const _ActionCard({
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.progress,
+    this.onTap,
   });
 
   @override
@@ -138,28 +164,45 @@ class _ActionCard extends StatelessWidget {
         horizontal: AppSpacing.m,
         vertical: AppSpacing.s,
       ),
-      onTap: () {},
-      child: Row(
+      onTap: onTap ?? () {},
+      child: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(AppSpacing.s),
-            decoration: BoxDecoration(
-              color: AppColors.turquoise.withAlpha(25),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Icon(icon, color: AppColors.turquoise, size: 28),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(AppSpacing.s),
+                decoration: BoxDecoration(
+                  color: AppColors.turquoise.withAlpha(25),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Icon(icon, color: AppColors.turquoise, size: 28),
+              ),
+              const SizedBox(width: AppSpacing.m),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title, style: AppTypography.h2),
+                    Text(subtitle, style: AppTypography.label),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: AppColors.gold),
+            ],
           ),
-          const SizedBox(width: AppSpacing.m),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: AppTypography.h2),
-                Text(subtitle, style: AppTypography.label),
-              ],
+          if (progress != null) ...[
+            const SizedBox(height: AppSpacing.s),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: progress!.clamp(0.0, 1.0),
+                minHeight: 6,
+                backgroundColor: AppColors.turquoise.withAlpha(25),
+                valueColor:
+                    const AlwaysStoppedAnimation<Color>(AppColors.turquoise),
+              ),
             ),
-          ),
-          const Icon(Icons.chevron_right, color: AppColors.gold),
+          ],
         ],
       ),
     );
